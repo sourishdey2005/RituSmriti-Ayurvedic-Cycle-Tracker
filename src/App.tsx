@@ -48,7 +48,6 @@ export default function App() {
         const savedProfile = await RituDb.getUserProfile();
         const savedLogs = await RituDb.getAllDailyLogs();
         const savedLang = await RituDb.getSetting<AppLanguage>('language', 'en');
-        const savedTheme = await RituDb.getSetting<AppTheme>('theme', 'light');
         const savedSexLog = await RituDb.getSetting<boolean>('show_sexual_health', true);
 
         if (savedProfile) {
@@ -57,7 +56,7 @@ export default function App() {
         }
         setLogs(savedLogs);
         setLanguage(savedLang);
-        setTheme(savedTheme);
+        setTheme('light');
         setShowSexualHealth(savedSexLog);
       } catch (err) {
         console.error('Failed to load local RituSmriti DB sandbox:', err);
@@ -71,17 +70,8 @@ export default function App() {
   // Update theme visually on host root element
   useEffect(() => {
     const root = window.document.documentElement;
-    if (theme === 'dark') {
-      root.classList.add('dark');
-    } else if (theme === 'light') {
-      root.classList.remove('dark');
-    } else {
-      // System watch
-      const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      if (systemDark) root.classList.add('dark');
-      else root.classList.remove('dark');
-    }
-  }, [theme]);
+    root.classList.remove('dark');
+  }, []);
 
   const handleOnboardingComplete = async (newProfile: UserProfile) => {
     setIsLoading(true);
@@ -113,8 +103,8 @@ export default function App() {
   };
 
   const handleUpdateTheme = async (newTheme: AppTheme) => {
-    setTheme(newTheme);
-    await RituDb.setSetting('theme', newTheme);
+    setTheme('light');
+    await RituDb.setSetting('theme', 'light');
   };
 
   const handleToggleSexualHealth = async (show: boolean) => {

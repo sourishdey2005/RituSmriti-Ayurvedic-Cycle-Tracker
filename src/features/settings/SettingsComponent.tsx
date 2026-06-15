@@ -262,20 +262,10 @@ export default function SettingsComponent({
                 <Moon className="w-4 h-4 text-lavender-mist" />
                 <span>{t.themeSelection}</span>
               </h3>
-              <div className="grid grid-cols-3 gap-2" id="settings-theme-selector">
-                {(['light', 'dark', 'system'] as AppTheme[]).map((thm) => (
-                  <button
-                    key={thm}
-                    onClick={() => onUpdateTheme(thm)}
-                    className={`py-2 px-1 rounded-xl text-[10px] md:text-xs font-bold border transition cursor-pointer capitalize ${
-                      theme === thm 
-                        ? 'bg-lavender-mist/15 border-lavender-mist text-stone-800 font-extrabold' 
-                        : 'bg-stone-50 border-stone-200 text-stone-500 hover:bg-stone-100'
-                    }`}
-                  >
-                    {thm}
-                  </button>
-                ))}
+              <div id="settings-theme-selector">
+                <div className="w-full py-2.5 px-3 rounded-xl text-xs font-extrabold border bg-lavender-mist/15 border-lavender-mist text-stone-800 text-center uppercase tracking-wider">
+                  Sattvik Ivory (Light Only)
+                </div>
               </div>
             </div>
 

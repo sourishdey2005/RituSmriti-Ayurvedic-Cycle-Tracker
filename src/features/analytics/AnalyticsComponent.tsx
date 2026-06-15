@@ -31,6 +31,7 @@ import {
 import { DailyLog, UserProfile } from '../../types';
 import { getPeriodIntervals, calculateCycleMetrics } from '../../utils/cycleEngine';
 import { translations } from '../../locales/translations';
+import YearlyHeatmap from './YearlyHeatmap';
 
 interface AnalyticsComponentProps {
   logs: DailyLog[];
@@ -409,6 +410,11 @@ export default function AnalyticsComponent({
         </div>
       ) : (
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
+
+          {/* D3 CALENDAR YEAR HEATMAP VISUALIZATION */}
+          <div className="lg:col-span-12">
+            <YearlyHeatmap logs={logs} language={language} />
+          </div>
 
           {/* MAIN COLUMN 1: CYCLE TRENDS CHRONICLE (Line or Bar chart) */}
           {cycleData.length > 0 && (
