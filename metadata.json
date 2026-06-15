@@ -1,0 +1,6 @@
+{
+  "name": "RituSmriti",
+  "description": "Premium client-side menstrual cycle and women's wellness tracking companion.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

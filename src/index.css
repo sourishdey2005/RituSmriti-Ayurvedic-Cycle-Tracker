@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400..700;1,400..700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-moon-rose: #D68BA6;
+  --color-lavender-mist: #B8A2D9;
+  --color-lotus-gold: #D4B06A;
+  --color-ivory-white: #FFFDF9;
+  --color-warm-cream: #F9F5EE;
+  --color-ritu-success: #5BA97F;
+  --color-ritu-warning: #F3B562;
+  --color-ritu-error: #E36A6A;
+  
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+}
+
+/* Custom gorgeous scrollbar styled for client applet */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #FFFDF9;
+}
+::-webkit-scrollbar-thumb {
+  background: #D8CCD0;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #D68BA6;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-ivory-white);
+  color: #3A3530;
+}
+
+/* Base custom interactive animation classes if needed */
+.cycle-ring-pulse {
+  animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.15;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.3;
+  }
+}
