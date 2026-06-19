@@ -1,6 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import { BookOpen, Search, Sparkles, Flame, Moon, ArrowRight, Heart} from 'lucide-react';
 import { translations } from '../../locales/translations';
+import AyurvedicAIGuru from './AyurvedicAIGuru';
 
 interface WellnessLibraryProps {
   language: 'en' | 'hi' | 'bn';
@@ -483,6 +484,9 @@ export default function WellnessLibrary({ language }: WellnessLibraryProps) {
           />
         </div>
       </div>
+
+      {/* INTERACTIVE AYURVEDIC AI GURU FOR TAILORED AI REMEDIES */}
+      <AyurvedicAIGuru language={language} />
 
       {/* TABS SELECTORS */}
       <div className="flex gap-1 bg-stone-100 p-1 rounded-full overflow-x-auto self-start" id="library-tabs">
